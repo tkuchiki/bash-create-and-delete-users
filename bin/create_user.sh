@@ -79,7 +79,7 @@ create_user() {
     
     AUTHORIZED_KEYS=$SSH_DIR/authorized_keys
     
-    HASH=`cat /dev/urandom | tr -dc '[:alnum:]' | head -c 32`
+    HASH=`cat /dev/urandom | LC_CTYPE=C tr -dc "[:alnum:]" | head -c 32`
     TMP_SHELL=/tmp/${HASH}.sh
     
     SSH_OPTIONS=`bash -c "echo $SSH_OPTIONS"`
