@@ -79,7 +79,7 @@ create_user() {
     
     AUTHORIZED_KEYS=$SSH_DIR/authorized_keys
     
-    HASH=`python -c "import hashlib; import time; print hashlib.sha1(str(time.time())).hexdigest()"`
+    HASH=`python -c "cat /dev/urandom | tr -dc '[:alnum:]' | head -c 32`
     TMP_SHELL=/tmp/${HASH}.sh
     
     SSH_OPTIONS=`bash -c "echo $SSH_OPTIONS"`
