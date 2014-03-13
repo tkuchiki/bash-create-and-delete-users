@@ -118,7 +118,7 @@ BIN_PATH=$(cd $(dirname $0); pwd)
 SSH_CONF=$BIN_PATH/../config/ssh_config
 KNOWN_HOSTS=$BIN_PATH/../tmp/known_hosts
 
-get_options "$@" --ssh_options "-F ${SSH_CONF} -o UserKnownHostsFile=${KNOWN_HOSTS}"
+get_options "$@" --ssh_options "-F ${SSH_CONF} -o UserKnownHostsFile=${KNOWN_HOSTS} ${SSH_OPTIONS}"
 
 SERVERS=${_HOSTS:-"server1 server2"}
 
